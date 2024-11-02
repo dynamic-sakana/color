@@ -2,7 +2,7 @@
  *@file color.h
  * @author dynamic_sakana (dynamicsakana@gmail.com)
  * @brief 可以将C风格和C++的字符串使用彩色输出到控制台
- * @version 0.1
+ * @version 0.0.1
  * @date 2024-10-31
  * 
  * @copyright Copyright (c) 2024
@@ -33,6 +33,10 @@ public:
 	 * @param a_content 内容
 	 */
 	color(const char* a_content);
+	color(int a);
+	color(float a);
+	color(double a);
+	color(bool a);
 
 	/**
 	 *@brief 纯虚函数，用于打印content中的内容
@@ -51,6 +55,7 @@ public:
 inline std::ostream& operator << (std::ostream& cout, const color& content) {
 	// 内联函数最好定义在头文件中
 	// 内联函数与普通函数不同，其仅仅在本文件内可见，而不是全局可见的
+	// 同时内联函数的展开发生在编译阶段
 	content.print();
 	return cout;
 }
@@ -66,6 +71,11 @@ public:
 	// 仅能通过初始化列表的方式显式调用父类的构造函数
 	red(std::string a_content) : color(a_content) { }
 	red(const char* a_content) : color(a_content) { }
+	red(int a_content) : color(a_content) { }
+	red(float a_content) : color(a_content) { }
+	red(double a_content) : color(a_content) { }
+	red(bool a_content) : color(a_content) { }
+
 	void print() const;
 };
 
@@ -77,6 +87,10 @@ class green : public color {
 public:
 	green(std::string a_content) : color(a_content) { }
 	green(const char* a_content) : color(a_content) { }
+	green(int a_content) : color(a_content) { }
+	green(float a_content) : color(a_content) { }
+	green(double a_content) : color(a_content) { }
+	green(bool a_content) : color(a_content) { }
 	void print() const;
 };
 
@@ -88,6 +102,10 @@ class yellow : public color {
 public:
 	yellow(std::string a_content) : color(a_content) { }
 	yellow(const char* a_content) : color(a_content) { }
+	yellow(int a_content) : color(a_content) { }
+	yellow(float a_content) : color(a_content) { }
+	yellow(double a_content) : color(a_content) { }
+	yellow(bool a_content) : color(a_content) { }
 	void print() const;
 };
 
@@ -99,6 +117,10 @@ class blue : public color {
 public:
 	blue(std::string a_content) : color(a_content) { }
 	blue(const char* a_content) : color(a_content) { }
+	blue(int a_content) : color(a_content) { }
+	blue(float a_content) : color(a_content) { }
+	blue(double a_content) : color(a_content) { }
+	blue(bool a_content) : color(a_content) { }
 	void print() const;
 };
 
@@ -110,6 +132,10 @@ class pink : public color {
 public:
 	pink(std::string a_content) : color(a_content) { }
 	pink(const char* a_content) : color(a_content) { }
+	pink(int a_content) : color(a_content) { }
+	pink(float a_content) : color(a_content) { }
+	pink(double a_content) : color(a_content) { }
+	pink(bool a_content) : color(a_content) { }
 	void print() const;
 };
 
@@ -121,5 +147,9 @@ class cyan : public color {
 public:
 	cyan(std::string a_content) : color(a_content) { }
 	cyan(const char* a_content) : color(a_content) { }
+	cyan(int a_content) : color(a_content) { }
+	cyan(float a_content) : color(a_content) { }
+	cyan(double a_content) : color(a_content) { }
+	cyan(bool a_content) : color(a_content) { }
 	void print() const;
 };

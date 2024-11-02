@@ -1,7 +1,10 @@
 #include "color.h"
-
 color::color(std::string a_content) { content = a_content; }
 color::color(const char* a_content) { content = a_content; }
+color::color(int a) { content = std::to_string(a); }
+color::color(float a) { content = std::to_string(a); }
+color::color(double a) { content = std::to_string(a); }
+color::color(bool a) { content = std::to_string(a); }
 
 void red::print() const {
 	printf("\033[0m\033[1;31m%s\033[0m", content.c_str());
